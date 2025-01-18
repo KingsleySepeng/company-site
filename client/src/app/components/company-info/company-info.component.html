@@ -1,0 +1,19 @@
+<div class="company-info-container" *ngIf="company; else noCompany">
+  <h2>My Company Info</h2>
+  <p><strong>Name:</strong> {{ company.name }}</p>
+  <p><strong>Registration No:</strong> {{ company.registrationNo }}</p>
+  <p><strong>Created At:</strong> {{ company.createdAt | date:'mediumDate' }}</p>
+  <p><strong>Compliance Status:</strong> {{ complianceStatus }}</p>
+  <p>
+    <strong>Annual Return Uploaded:</strong>
+    {{ company.annualReturnUploaded ? 'Yes' : 'No' }}
+  </p>
+  <p>
+    <strong>Beneficial Ownership Uploaded:</strong>
+    {{ company.beneficialOwnershipUploaded ? 'Yes' : 'No' }}
+  </p>
+</div>
+
+<ng-template #noCompany>
+  <p>{{ message }}</p>
+</ng-template>

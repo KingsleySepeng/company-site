@@ -1,0 +1,19 @@
+<div class="compliance-container" *ngIf="company; else noCompany">
+  <h2>Compliance & Document Upload</h2>
+
+  <div class="upload-section">
+    <input type="text" [(ngModel)]="fileName" placeholder="Enter file name (e.g., annualReturn2023.pdf)" />
+    <button (click)="uploadAnnualReturn()">Upload Annual Return</button>
+    <button (click)="uploadBeneficialOwnership()">Upload Beneficial Ownership</button>
+  </div>
+
+  <div class="buttons">
+    <button (click)="checkCipc()">Check CIPC API</button>
+  </div>
+
+  <p class="message" *ngIf="message">{{ message }}</p>
+</div>
+
+<ng-template #noCompany>
+  <p>{{ message }}</p>
+</ng-template>

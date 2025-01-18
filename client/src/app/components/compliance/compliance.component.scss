@@ -1,0 +1,37 @@
+.compliance-container {
+  max-width: 600px;
+  margin: 2em auto;
+  border: 1px solid #ccc;
+  padding: 1em;
+
+  h2 {
+    text-align: center;
+  }
+
+  .upload-section {
+    display: flex;
+    gap: 0.5em;
+    margin-bottom: 1em;
+
+    input {
+      flex: 1;
+      padding: 0.5em;
+    }
+    button {
+      padding: 0.5em 1em;
+    }
+  }
+
+  .buttons {
+    margin-bottom: 1em;
+    button {
+      padding: 0.5em 1em;
+    }
+  }
+
+  .message {
+    margin-top: 1em;
+    font-weight: bold;
+    color: green;
+  }
+}

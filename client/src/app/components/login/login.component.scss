@@ -1,0 +1,26 @@
+.login-container {
+  max-width: 400px;
+  margin: 2em auto;
+  border: 1px solid #ccc;
+  padding: 1em;
+  h2 {
+    text-align: center;
+  }
+  div {
+    margin-bottom: 1em;
+    label {
+      display: inline-block;
+      width: 80px;
+      font-weight: bold;
+    }
+    input {
+      padding: 0.5em;
+      width: 200px;
+    }
+  }
+  button {
+    width: 100%;
+    padding: 0.75em;
+    cursor: pointer;
+  }
+}

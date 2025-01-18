@@ -1,0 +1,36 @@
+<!-- src/app/components/compliance-history/compliance-history.component.html -->
+<div class="compliance-history-container" *ngIf="company; else noCompany">
+  <h2>Compliance History for {{ company.name }}</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Year</th>
+      <th>Annual Return</th>
+      <th>Beneficial Ownership</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let c of complianceByYear">
+      <td>{{ c.year }}</td>
+      <!-- Annual Return -->
+      <td [style.color]="c.annualReturnStatus">
+        <ng-container *ngIf="c.annualReturn; else notUploaded1">
+          {{ c.annualReturn.name }} ({{ c.annualReturn.uploadDate | date:'shortDate' }})
+        </ng-container>
+        <ng-template #notUploaded1>Not Uploaded</ng-template>
+      </td>
+      <!-- Beneficial Ownership -->
+      <td [style.color]="c.beneficialStatus">
+        <ng-container *ngIf="c.beneficialOwnership; else notUploaded2">
+          {{ c.beneficialOwnership.name }} ({{ c.beneficialOwnership.uploadDate | date:'shortDate' }})
+        </ng-container>
+        <ng-template #notUploaded2>Not Uploaded</ng-template>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noCompany>
+  <p>{{ message }}</p>
+</ng-template>
